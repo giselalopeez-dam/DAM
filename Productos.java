@@ -71,7 +71,7 @@ public class Productos {
 
     public void modificarCantidad(int cantidad) {
         if (cantidad < 0) {
-            if (this.cantidad - cantidad < 0) {
+            if (this.cantidad + cantidad < 0) {
                 System.out.println("No puedes comprar tanta cantidad");
 
             } else {
