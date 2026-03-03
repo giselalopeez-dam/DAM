@@ -1,4 +1,3 @@
-package T8Herencias.Ejer1Horas;
 
 public class HoraExacta extends Hora {
 
@@ -18,11 +17,10 @@ public class HoraExacta extends Hora {
     }
 
     public void setSegundos(int segundos) {
-        if(segundos < 0 && segundos > 59){
+        if (segundos < 0 && segundos > 59) {
             this.segundos = 0;
             System.out.println("Los segundos no se han asignado correctamente.");
-        }
-        else {
+        } else {
             this.segundos = segundos;
             System.out.println("Segundos asignados correctamente.");
         }
@@ -37,8 +35,12 @@ public class HoraExacta extends Hora {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Hora: " + this.hora + ":" + this.minuto + ":" + this.segundos;
+    }
+
+    public void mostrarHora() {
+        System.out.println("Hora: " + this.hora + ":" + this.segundos);
     }
 
 }
