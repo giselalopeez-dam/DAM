@@ -20,6 +20,6 @@ public class producto {
         }
 
         raton.modificarCantidad(5);
-
+        System.out.println(raton.getCantidad());
     }
 }
