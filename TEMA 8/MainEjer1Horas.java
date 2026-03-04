@@ -12,7 +12,6 @@ public class MainEjer1Horas {
         // mostrar la hora con el public void mostrarHora
         horaExacta.inc();
         System.out.println(horaExacta.toString());
-
     }
 
 }
