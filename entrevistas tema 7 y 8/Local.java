@@ -16,8 +16,8 @@ public class Local extends Inmueble {
     }
 
     public Local(double metrosCuadrados, double precioBase, String direccion, String nombreDueno, String contactoDueno,
-            boolean segundaMano, double precio, String actividad, boolean tieneEscaparate) {
-        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano, precio);
+            boolean segundaMano, String actividad, boolean tieneEscaparate) {
+        super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano);
         this.actividad = actividad;
         this.tieneEscaparate = tieneEscaparate;
     }
@@ -48,9 +48,11 @@ public class Local extends Inmueble {
 
         if (tieneEscaparate) {
 
-            this.precio = calculoFinal;
-            return this.precio;
+            precio = calculoFinal;
         }
+
+        this.precio = precio;
+        return this.precio;
     }
 
 }

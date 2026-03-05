@@ -34,17 +34,9 @@ public class ejerciciostrings {
 
         for (int i = 0; i < nombres.length; i++) {
 
-            char[] nombre = nombres[].toCharArray();
+            // char[] nombre = nombres[].toCharArray();
 
-            if (nombre.length <= 3 || nombre.length >= 13 || nombres[i].contains("null")
-                    || !Character.isLetterOrDigit(i)) {
-                System.out.println("El " + (i + 1) + " no cumple las condiciones");
-
-            } else {
-
-                usuariosCorrectos[i] = nombres[i];
-            }
-
+            //
         }
 
     }

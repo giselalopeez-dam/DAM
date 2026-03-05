@@ -20,14 +20,14 @@ public class Inmueble {
 
     public Inmueble(double metrosCuadrados, double precioBase, String direccion, String nombreDueno,
             String contactoDueno,
-            boolean segundaMano, double precio) {
+            boolean segundaMano) {
+
         this.metrosCuadrados = metrosCuadrados;
         this.precioBase = precioBase;
         this.direccion = direccion;
         this.nombreDueno = nombreDueno;
         this.contactoDueno = contactoDueno;
         this.segundaMano = segundaMano;
-        this.precio = precio;
     }
 
     public double calcularPrecioFinal() {
@@ -60,7 +60,7 @@ public class Inmueble {
     }
 
     public void llamarDueno() {
-        System.out.println("Los datos personales del dueño son: ");
+        System.out.println("Los datos del dueño del inmueble para contactar son: ");
         System.out.println("Nombre: " + nombreDueno);
         System.out.println("Número de teléfono: " + contactoDueno);
     }
