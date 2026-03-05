@@ -1,25 +1,59 @@
 public class Piso extends Inmueble {
 
-    private boolean planta;
+    private int planta;
     private boolean tieneAscensor;
 
     public Piso() {
 
-        this.planta = false;
+        this.planta = 0;
         this.tieneAscensor = false;
     }
 
     public Piso(boolean planta, boolean tieneAscensor) {
-        this.planta = planta;
+        this.planta = 0;
         this.tieneAscensor = tieneAscensor;
     }
 
     public Piso(double metrosCuadrados, double precioBase, String direccion, String nombreDueno, String contactoDueno,
-            boolean segundaMano, double precio, boolean planta, boolean tieneAscensor) {
+            boolean segundaMano, double precio, int planta, boolean tieneAscensor) {
 
         super(metrosCuadrados, precioBase, direccion, nombreDueno, contactoDueno, segundaMano, precio);
         this.planta = planta;
         this.tieneAscensor = tieneAscensor;
+    }
+
+    public int getPlanta() {
+        return planta;
+    }
+
+    public void setPlanta(int planta) {
+        this.planta = planta;
+    }
+
+    public boolean isTieneAscensor() {
+        return tieneAscensor;
+    }
+
+    public void setTieneAscensor(boolean tieneAscensor) {
+        this.tieneAscensor = tieneAscensor;
+    }
+
+    @Override
+    public double calcularPrecioFinal() {
+
+        double precio = super.calcularPrecioFinal();
+
+        double calculo = precio * 0.05;
+        double precioFinal = calculo + precio;
+
+        if (tieneAscensor) {
+
+            precio = precioFinal;
+
+        }
+        this.precio = precio;
+        return this.precio;
+
     }
 
 }
