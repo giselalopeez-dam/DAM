@@ -38,10 +38,9 @@ public class ejerciciorepasoprofenueva {
 
         usuario.close();
 
-        String[] clientes = new String[];
-        clientes[] = nombre;
-        for (int i = 0; i < clientes.length; i++) {
-            
-        }
+        // String[] clientes = new String[];
+        // clientes[] = nombre;
+        // for (int i = 0; i < clientes.length; i++) {
+
     }
 }
