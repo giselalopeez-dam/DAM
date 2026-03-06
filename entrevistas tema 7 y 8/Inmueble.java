@@ -65,7 +65,8 @@ public class Inmueble {
         System.out.println("Número de teléfono: " + contactoDueno);
     }
 
-    public void vendido() {
+    protected static Inmueble vendido() {
+        return null;
     }
 
     public double getMetrosCuadrados() {
