@@ -241,7 +241,7 @@ public class mainInmueble {
         System.out.println("Introduzca los metros cuadrados de su piso");
         piso.metrosCuadrados = sc.nextDouble();
         System.out.println(
-                "Introduzca el precio del metro cuadrado en euros de la zona (lo revisamos para ofrecer el mejor precio del mercado)");
+                "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
         piso.precioBase = sc.nextDouble();
         System.out.println("¿El piso es de segunda mano? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
