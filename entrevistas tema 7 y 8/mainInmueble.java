@@ -8,9 +8,9 @@ public class mainInmueble {
         // mostrarPiso(sc);
         // mostrarLocal(sc);
         // mostrarCasa(sc);
-        // comprar(sc);
+        comprar(sc);
         // soyVendedor(sc);
-        pedirInfoPiso(sc);
+        // pedirInfoPiso(sc);
 
     }
 
@@ -103,7 +103,8 @@ public class mainInmueble {
 
                 case 4:
                     System.out
-                            .println("Ha marcado que es un vendedor. ¿Quiere continuar el proceso? \n(1) SI \n(2) NO");
+                            .println(
+                                    "Ha marcado que es un vendedor. El proceso es un poco extenso. ¿Quiere continuar el proceso? \n(1) SI \n(2) NO");
                     opcion = sc.nextInt();
                     opcion = validarOpcion(sc, opcion);
 
@@ -115,7 +116,6 @@ public class mainInmueble {
 
                 case 5:
 
-                    System.out.println("Gracias por confiar en nosotros. Pronto tendremos más novedades.");
                     System.out.println("¡Hasta la próxima!");
 
                     break;
@@ -141,15 +141,10 @@ public class mainInmueble {
         do {
 
             System.out.println(
-                    "(0) QUIERO VENDER UN PISO \n(1) QUIERO VENDER UNA CASA \n(2) QUIERO VENDER UN LOCAL \n(3) SALIR");
+                    "(1) QUIERO VENDER UN PISO \n(2) QUIERO VENDER UNA CASA \n(3) QUIERO VENDER UN LOCAL \n(4) VOLVER A MENÚ PRINCIPAL");
             opcion = sc.nextInt();
 
             switch (opcion) {
-                case 0:
-
-                    pedirInfoPiso(sc);
-
-                    break;
                 case 1:
 
                     pedirInfoPiso(sc);
@@ -157,10 +152,17 @@ public class mainInmueble {
                     break;
                 case 2:
 
-                    pedirInfoPiso(sc);
+                    pedirInfoCasa(sc);
 
                     break;
                 case 3:
+
+                    pedirInfoLocal(sc);
+
+                    break;
+                case 4:
+
+                    System.out.println("Volviendo al menú principal...");
 
                     break;
 
@@ -171,11 +173,13 @@ public class mainInmueble {
                     break;
             }
 
-        } while (opcion >= 0 && opcion < 3);
+        } while (opcion >= 0 && opcion < 4);
 
     }
 
     private static void pedirInfoPiso(Scanner sc) {
+
+        sc.nextLine();
 
         int opcion;
 
@@ -219,6 +223,120 @@ public class mainInmueble {
         piso.mostrarInformacion();
         piso.llamarDueno();
         System.out.println("El precio estimado del piso es: " + piso.calcularPrecioFinal()
+                + " euros. Esto es una estimación, una vez nos pongamos en contacto contigo y revisemos la zona y sus precios, esta información puede cambiar.");
+        System.out.println("Gracias por confiar en nosotros. Le dejamos nuevamente en el menú de inmobiliaria.");
+        ;
+
+    }
+
+    private static void pedirInfoCasa(Scanner sc) {
+
+        sc.nextLine();
+
+        int opcion;
+
+        Casa casa = new Casa();
+
+        System.out.println("Escriba su nombre y apellidos");
+        casa.setNombreDueno(sc.nextLine());
+        System.out.println("Escriba su número de teléfono");
+        casa.setContactoDueno(sc.nextLine());
+        System.out.println("Escriba la dirección del inmueble");
+        casa.setDireccion(sc.nextLine());
+        System.out.println("¿Cuántas plantas tiene? Si es planta baja, ponga '0'");
+        casa.setPlantas(sc.nextInt());
+        System.out.println("Introduzca los metros cuadrados de su casa");
+        casa.setMetrosCuadrados(sc.nextDouble());
+        System.out.println(
+                "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
+        casa.setPrecioBase(sc.nextDouble());
+        System.out.println("¿La casa es de segunda mano? \n(1) SI \n(2) NO");
+        opcion = sc.nextInt();
+        opcion = validarOpcion(sc, opcion);
+
+        if (opcion == 1) {
+            casa.setSegundaMano(true);
+        } else if (opcion == 2) {
+            casa.setSegundaMano(false);
+        }
+
+        System.out.println("¿La casa tiene jardín? \n(1) SI \n(2) NO");
+        opcion = sc.nextInt();
+        opcion = validarOpcion(sc, opcion);
+
+        if (opcion == 1) {
+            casa.setTienePatio(true);
+        } else if (opcion == 2) {
+            casa.setTienePatio(false);
+        }
+
+        System.out.println("¿La casa es adosada? \n(1) SI \n(2) NO");
+        opcion = sc.nextInt();
+        opcion = validarOpcion(sc, opcion);
+
+        if (opcion == 1) {
+            casa.setEsAdosado(true);
+        } else if (opcion == 2) {
+            casa.setEsAdosado(false);
+        }
+
+        System.out.println("¡Gracias! A continuación le mostramos la información: ");
+
+        casa.mostrarInformacion();
+        casa.llamarDueno();
+        System.out.println("El precio estimado de la casa es: " + casa.calcularPrecioFinal()
+                + " euros. Esto es una estimación, una vez nos pongamos en contacto contigo y revisemos la zona y sus precios, esta información puede cambiar.");
+        System.out.println("Gracias por confiar en nosotros. Le dejamos nuevamente en el menú de inmobiliaria.");
+        ;
+
+    }
+
+    private static void pedirInfoLocal(Scanner sc) {
+
+        sc.nextLine();
+
+        int opcion;
+
+        Local local = new Local();
+
+        System.out.println("Escriba su nombre y apellidos");
+        local.setNombreDueno(sc.nextLine());
+        System.out.println("Escriba su número de teléfono");
+        local.setContactoDueno(sc.nextLine());
+        System.out.println("Escriba la dirección del inmueble");
+        local.setDireccion(sc.nextLine());
+        System.out.println("¿Qué actividad realiza en el local?");
+        local.setActividad(sc.nextLine());
+        System.out.println("Introduzca los metros cuadrados de su local");
+        local.setMetrosCuadrados(sc.nextDouble());
+        System.out.println(
+                "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
+        local.setPrecioBase(sc.nextDouble());
+        System.out.println("¿El local es de segunda mano? \n(1) SI \n(2) NO");
+        opcion = sc.nextInt();
+        opcion = validarOpcion(sc, opcion);
+
+        if (opcion == 1) {
+            local.setSegundaMano(true);
+        } else if (opcion == 2) {
+            local.setSegundaMano(false);
+        }
+
+        System.out.println("¿El local tiene escaparate? \n(1) SI \n(2) NO");
+        opcion = sc.nextInt();
+        opcion = validarOpcion(sc, opcion);
+
+        if (opcion == 1) {
+            local.setTieneEscaparate(true);
+        } else if (opcion == 2) {
+            local.setTieneEscaparate(false);
+        }
+
+        System.out.println("¡Gracias! A continuación le mostramos la información: ");
+
+        local.mostrarInformacion();
+        local.llamarDueno();
+        System.out.println("El precio estimado del local es: " + local.calcularPrecioFinal()
                 + " euros. Esto es una estimación, una vez nos pongamos en contacto contigo y revisemos la zona y sus precios, esta información puede cambiar.");
         System.out.println("Gracias por confiar en nosotros. Le dejamos nuevamente en el menú de inmobiliaria.");
         ;
