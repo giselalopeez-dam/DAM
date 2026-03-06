@@ -50,7 +50,7 @@ public class Inmueble {
 
     public void mostrarInformacion() {
         System.out
-                .println("El inmueble con direccion " + direccion + " consta de " + metrosCuadrados
+                .println("El inmueble situado en la direccion " + direccion + " ,consta de " + metrosCuadrados
                         + " metros cuadrados.");
         if (segundaMano) {
             System.out.println("El inmueble es de segunda mano");

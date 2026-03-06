@@ -57,4 +57,16 @@ public class Piso extends Inmueble {
 
     }
 
+    @Override
+    public void mostrarInformacion() {
+
+        super.mostrarInformacion();
+
+        if (tieneAscensor) {
+            System.out.println("El piso tiene ascensor");
+        } else {
+            System.out.println("El piso no tiene ascensor");
+        }
+    }
+
 }

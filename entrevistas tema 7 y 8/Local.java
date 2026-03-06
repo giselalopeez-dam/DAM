@@ -55,4 +55,16 @@ public class Local extends Inmueble {
         return this.precio;
     }
 
+    @Override
+    public void mostrarInformacion() {
+
+        super.mostrarInformacion();
+
+        if (tieneEscaparate) {
+            System.out.println("El local tiene escaparate");
+        } else {
+            System.out.println("El local no tiene escaparate");
+        }
+    }
+
 }

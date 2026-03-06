@@ -79,4 +79,24 @@ public class Casa extends Inmueble {
         return this.precio;
 
     }
+
+    @Override
+    public void mostrarInformacion() {
+
+        super.mostrarInformacion();
+
+        if (tienePatio) {
+            System.out.println("La casa tiene jardín");
+        } else {
+            System.out.println("La casa no tiene jardín");
+        }
+
+        if (esAdosado) {
+
+            System.out.println("La casa es adosada");
+
+        } else {
+            System.out.println("La casa no es adosada");
+        }
+    }
 }
