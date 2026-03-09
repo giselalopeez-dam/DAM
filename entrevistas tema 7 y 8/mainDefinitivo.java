@@ -15,9 +15,9 @@ public class mainDefinitivo {
 
         Inmueble piso = new Piso(150, 230, "Calle Turquesa, 23, Tercero Izquierda", "Alejandro Perez", "642080864",
                 false,
-                3, true);
+                4, true);
         Inmueble piso2 = new Piso(100, 68, "Calle Amatista, 16, Primero Derecha", "Ana García", "684016573", true,
-                1, false);
+                2, false);
 
         Inmueble casa = new Casa(235, 3000, "Calle Amatista, 36", "Pepa García", "684016573", true, true, 2,
                 true);
@@ -332,7 +332,7 @@ public class mainDefinitivo {
 
         int opcion;
 
-        System.out.println("¿Qué número de planta es? Si es planta baja, ponga '0'");
+        System.out.println("¿Qué número de planta es? Si es planta baja, ponga '1'");
         piso.setPlanta(sc.nextInt());
         System.out.println("¿El piso tiene ascensor? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
@@ -359,7 +359,8 @@ public class mainDefinitivo {
 
         int opcion;
 
-        System.out.println("¿Qué número de planta es? Si es planta baja, ponga '0'");
+        System.out
+                .println("¿Qué número de planta es? Si no tiene plantas, ponga '1' que es la única planta que tendría");
         casa.setPlantas(sc.nextInt());
 
         System.out.println("¿La casa tiene jardín? \n(1) SI \n(2) NO");

@@ -5,12 +5,12 @@ public class Piso extends Inmueble {
 
     public Piso() {
 
-        this.planta = 0;
+        this.planta = 1;
         this.tieneAscensor = false;
     }
 
     public Piso(int planta, boolean tieneAscensor) {
-        this.planta = 0;
+        this.planta = planta;
         this.tieneAscensor = tieneAscensor;
     }
 
