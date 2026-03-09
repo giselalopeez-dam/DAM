@@ -262,7 +262,7 @@ public class mainDefinitivo {
 
     private static String validarNumeroTelefono(Scanner sc, String numero) {
 
-        while (numero.length() < 9 || numero.length() > 9 || numero.isEmpty() || numero.isBlank()) {
+        while (numero.length() < 9 || numero.length() > 9 || numero.isBlank()) {
             if (numero.length() < 9) {
                 System.out.println("Su numero tiene menos de 9 digitos");
             } else if (numero.length() > 9) {
