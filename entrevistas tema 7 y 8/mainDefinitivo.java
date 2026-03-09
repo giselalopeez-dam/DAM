@@ -281,6 +281,22 @@ public class mainDefinitivo {
         return numero;
     }
 
+    private static String validarDireccion(Scanner sc, String direccion) {
+
+        while (direccion.isBlank()) {
+
+            if (direccion.isBlank()) {
+                System.out.println("No puede dejar la dirección vacía");
+            } else {
+                System.out.println("Error desconocido, vuelva a escribir la dirección");
+            }
+
+            direccion = sc.nextLine();
+        }
+        return direccion;
+
+    }
+
     private static void UsuarioSimulacion(Scanner sc) {
 
         sc.nextLine();
@@ -307,12 +323,16 @@ public class mainDefinitivo {
         double euros;
 
         System.out.println("Escriba su nombre");
-        inmueble.setNombreDueno(sc.nextLine());
-        validadorNombre(sc, inmueble.getNombreDueno());
+        String nombre = sc.nextLine();
+        nombre = validadorNombre(sc, nombre);
+        inmueble.setNombreDueno(nombre);
         System.out.println("Escriba su número de teléfono");
-        inmueble.setContactoDueno(sc.nextLine());
-        validarNumeroTelefono(sc, inmueble.getContactoDueno());
+        String telefono = sc.nextLine();
+        telefono = validarNumeroTelefono(sc, telefono);
+        inmueble.setContactoDueno(telefono);
         System.out.println("Escriba la dirección del inmueble");
+        String direccion = sc.nextLine();
+        direccion = validarDireccion(sc, direccion);
         inmueble.setDireccion(sc.nextLine());
 
         do {
