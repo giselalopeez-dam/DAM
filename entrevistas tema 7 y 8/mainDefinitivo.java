@@ -301,6 +301,8 @@ public class mainDefinitivo {
         sc.nextLine();
 
         int opcion;
+        double metros;
+        double euros;
 
         System.out.println("Escriba su nombre");
         inmueble.setNombreDueno(sc.nextLine());
@@ -310,11 +312,30 @@ public class mainDefinitivo {
         validarNumeroTelefono(sc, inmueble.getContactoDueno());
         System.out.println("Escriba la dirección del inmueble");
         inmueble.setDireccion(sc.nextLine());
-        System.out.println("Introduzca los metros cuadrados de su inmueble");
-        inmueble.setMetrosCuadrados(sc.nextDouble());
-        System.out.println(
-                "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
-        inmueble.setPrecioBase(sc.nextDouble());
+
+        do {
+            System.out.println("Introduzca los metros cuadrados de su inmueble");
+            metros = sc.nextDouble();
+
+            if (metros <= 0) {
+                System.out.println("Error. Los metros cuadrados deben ser mayores que 0.");
+            }
+
+        } while (metros <= 0);
+        inmueble.setMetrosCuadrados(metros);
+
+        do {
+            System.out.println(
+                    "Introduzca el precio del metro cuadrado en euros de la zona. Lo revisamos para ofrecer el mejor precio del mercado (si no sabe el precio del metro cuadrado, ponga uno estimado)");
+            euros = sc.nextDouble();
+            if (euros <= 0) {
+                System.out.println("Error. El precio por metro cuadrado debe ser mayor que 0.");
+            }
+        } while (euros <= 0);
+        inmueble.setPrecioBase(euros);
+
+        sc.nextLine();
+
         System.out.println("¿El piso es de segunda mano? \n(1) SI \n(2) NO");
         opcion = sc.nextInt();
         opcion = validarOpcion(sc, opcion);

@@ -6,7 +6,7 @@ public class Casa extends Inmueble {
 
     public Casa() {
         this.tienePatio = false;
-        this.plantas = 0;
+        this.plantas = 1;
         this.esAdosado = false;
     }
 

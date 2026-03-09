@@ -76,7 +76,11 @@ public class Inmueble {
     }
 
     public void setMetrosCuadrados(double metrosCuadrados) {
-        this.metrosCuadrados = metrosCuadrados;
+        if (metrosCuadrados <= 0) {
+            System.out.println("Error: los metros cuadrados deben ser mayores que 0");
+        } else {
+            this.metrosCuadrados = metrosCuadrados;
+        }
     }
 
     public double getPrecioBase() {
@@ -84,6 +88,12 @@ public class Inmueble {
     }
 
     public void setPrecioBase(double precioBase) {
+
+        if (precioBase <= 0) {
+            System.out.println("Error: el precio debe ser mayor que 0");
+        } else {
+            this.precioBase = precioBase;
+        }
         this.precioBase = precioBase;
     }
 
