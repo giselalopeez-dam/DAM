@@ -134,6 +134,8 @@ public class mainDefinitivo {
                         break;
                     }
 
+                    break;
+
                 case 5:
 
                     System.out.println("¡Hasta la próxima!");
